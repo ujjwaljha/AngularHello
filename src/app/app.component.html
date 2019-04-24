@@ -1,0 +1,19 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1 appBlueColor>
+    Welcome to {{ title }}!
+  </h1> 
+  <div *ngIf="counter % 2; let randomVariable">Yep!{{randomVariable}}</div>
+  <h2 *ngIf="visible; then evenClicked else oddClicked">this workes: {{testing}}</h2>
+  <button (click)='toggleDiv()'>Toggle</button>
+</div>
+  
+<ng-template #oddClicked>Odd number of click</ng-template>
+<ng-template #evenClicked>Even number of click</ng-template>
+
+
+<input type="text" #myInputText>
+
+<app-child [myAwesomeValue]="3+5+7" (myOutputValue)="awesomeMethod($event)"></app-child>
+
+<router-outlet></router-outlet>
